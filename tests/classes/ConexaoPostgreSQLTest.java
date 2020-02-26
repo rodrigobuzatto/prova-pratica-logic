@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 class ConexaoPostgreSQLTest {
 	
 	Connection con = null;
-	ConexaoPostgreSQL conexao = new ConexaoPostgreSQL("jdbc:postgresql://localhost:5432/logic", "logic", "logic");
+	ConexaoPostgreSQL conexao = new ConexaoPostgreSQL();
 	ConexaoPostgreSQL conexaoErrada = new ConexaoPostgreSQL("jdbc:postgresql://localhost:5432/logic", "logic", "logic2");
 	
 	@Test

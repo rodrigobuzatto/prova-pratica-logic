@@ -20,11 +20,6 @@ public class TransportadoraBD implements BuscaTransportadorasBD{
 			if(result.next()) {
 				transportadoras.add(new Transportadora(result.getInt("idTipoTransporte"), result.getDouble("valor"), result.getInt("tempo")));
 			}
-			transportadoras.add(new Transportadora(1, 200.00, 0.30));
-			transportadoras.add(new Transportadora(2, 75.00, 0.59));
-			transportadoras.add(new Transportadora(1, 180.00, 0.33));
-			transportadoras.add(new Transportadora(2, 55.00, 1.05));
-			transportadoras.add(new Transportadora(1, 175.00, 0.30));
 			statement.close();				
 			return transportadoras;
 		} catch(SQLException e) {
@@ -42,11 +37,6 @@ public class TransportadoraBD implements BuscaTransportadorasBD{
 			if(result.next()) {
 				transportadoras.add(new Transportadora(result.getInt("idTipoTransporte"), result.getDouble("valor"), result.getInt("tempo")));
 			}
-			transportadoras.add(new Transportadora(1, 200.00, 0.30));
-			transportadoras.add(new Transportadora(2, 50.00, 0.59));
-			transportadoras.add(new Transportadora(1, 180.00, 0.33));
-			transportadoras.add(new Transportadora(2, 55.00, 1.05));
-			transportadoras.add(new Transportadora(1, 175.00, 0.30));
 			statement.close();			
 			return transportadoras;
 		} catch(SQLException e) {

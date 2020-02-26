@@ -21,7 +21,7 @@ public class Transportadora{
 	
 	protected double getTempo() {
 		return tempo;
-	}	
+	}
 
 	@Override
 	public String toString() {

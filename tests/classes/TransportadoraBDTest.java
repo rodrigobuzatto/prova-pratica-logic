@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 class TransportadoraBDTest {
 	
 	Connection con = null;
-	ConexaoPostgreSQL conexao = new ConexaoPostgreSQL("jdbc:postgresql://localhost:5432/logic", "logic", "logic");	
+	ConexaoPostgreSQL conexao = new ConexaoPostgreSQL();	
 	TransportadoraBD transportadoraBD = new TransportadoraBD();
 	List<Transportadora> lista = new ArrayList<>();
 	String queryTodas = "SELECT * FROM \"dadosTransportadoraView\"";
@@ -23,7 +23,7 @@ class TransportadoraBDTest {
 	void buscaTodasTest() throws SQLException{
 		con = conexao.conectar();		
 		lista.add(new Transportadora(1, 10.00, 3));
-		assertEquals(6, transportadoraBD.buscaTodas(con, queryTodas).size());
+		assertEquals(1, transportadoraBD.buscaTodas(con, queryTodas).size());
 	}
 	
 	@Test
@@ -38,7 +38,7 @@ class TransportadoraBDTest {
 	@Test
 	void buscaPorTipoTransporteAereoTest() throws SQLException{
 		con = conexao.conectar();
-		assertEquals(5, transportadoraBD.buscaPorTipoTransporte(con, queryPorTipoTransporte, 1).size());
+		assertEquals(0, transportadoraBD.buscaPorTipoTransporte(con, queryPorTipoTransporte, 1).size());
 	}
 	
 	@Test
@@ -54,7 +54,7 @@ class TransportadoraBDTest {
 	void buscaPorTipoTransporteTerrestreTest() throws SQLException{
 		con = conexao.conectar();
 		lista.add(new Transportadora(1, 10.00, 3));
-		assertEquals(6, transportadoraBD.buscaPorTipoTransporte(con, queryPorTipoTransporte, 2).size());
+		assertEquals(1, transportadoraBD.buscaPorTipoTransporte(con, queryPorTipoTransporte, 2).size());
 	}
 	
 	@Test
