@@ -44,8 +44,6 @@ public class Transporte {
 			
 			List<Transportadora> novaLista = Utils.atualizaValores(listaTransportadoras, getDistancia());
 			
-			System.out.println(novaLista);
-			
 			if(getPrioridade() == "preco") {
 				melhorOpcao = Utils.fitroMenorPreco(novaLista);
 			}
@@ -53,12 +51,12 @@ public class Transporte {
 				melhorOpcao = Utils.fitroMenorTempo(novaLista);
 			}
 			if(melhorOpcao.size() > 1) {
-				melhorOpcao = Utils.fitroMenorTempoePreco(novaLista);
+				melhorOpcao = Utils.fitroMenorTempoePreco(melhorOpcao);
 			}
+			return melhorOpcao;
 			
 		} catch (Exception e) {
 			throw new Exception("Não foram encontradas transportadoras disponíveis");
-		}		
-		return melhorOpcao;
+		}
 	}	
 }

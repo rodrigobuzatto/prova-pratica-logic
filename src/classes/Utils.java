@@ -90,12 +90,6 @@ public abstract class Utils {
 			listaTransportadoras.addAll(listaWS.buscaPorTipoTransporte(t.getTipoTransporte()));
 		}
 		
-		listaTransportadoras.add(new Transportadora(1, 200.00, 0.30));
-		listaTransportadoras.add(new Transportadora(2, 75.00, 0.59));
-		listaTransportadoras.add(new Transportadora(1, 180.00, 0.33));
-		listaTransportadoras.add(new Transportadora(2, 55.00, 1.05));
-		listaTransportadoras.add(new Transportadora(1, 175.00, 0.30));
-		
 		return listaTransportadoras;
 	}
 }
